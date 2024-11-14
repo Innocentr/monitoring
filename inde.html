@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELTAS Program Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .form-section:hover {
+            background-color: #e9e9e9;
+        }
+
+        .form-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="date"],
+        .form-section input[type="number"],
+        .form-section input[type="url"],
+        .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-section label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-section textarea {
+            height: 120px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 10px;
+            float: right;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .collapse-btn {
+            font-size: 16px;
+            padding: 8px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .collapse-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .collapse-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>DELTAS Program Submission Form</h1>
+    
+    <form action="#" method="post">
+        
+        <!-- Section 1: Fellows Supported by DELTAS -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('fellows-section')">Fellows Supported by DELTAS <button type="button" class="collapse-btn">+</button></h2>
+            <div id="fellows-section" class="collapse-content">
+                <label>Name of Fellow:</label>
+                <input type="text" name="fellow_name">
+                <label>Nationality:</label>
+                <input type="text" name="fellow_nationality">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="fellow_institution">
+                <label>Training Institute:</label>
+                <input type="text" name="fellow_training_institute">
+                <label>Entry Date:</label>
+                <input type="date" name="fellow_entry_date">
+                <label>Estimated Completion Date:</label>
+                <input type="date" name="fellow_estimated_completion">
+                <label>Type of Support:</label>
+                <input type="text" name="fellow_support_type">
+                <label>Fellowship Status:</label>
+                <input type="text" name="fellow_status">
+                <label>Age at Recruitment:</label>
+                <input type="number" name="fellow_age_at_recruitment">
+                <label>Gender:</label>
+                <input type="text" name="fellow_gender">
+                <label>Training/Fellowship Level:</label>
+                <input type="text" name="fellow_level">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="fellow_quarter">
+                <label>Remarks:</label>
+                <textarea name="fellow_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Fellow's Data</button>
+            </div>
+        </div>
+
+        <!-- Section 2: Non-Research Staff Supported by DELTAS -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('staff-section')">Non-Research Staff Supported by DELTAS <button type="button" class="collapse-btn">+</button></h2>
+            <div id="staff-section" class="collapse-content">
+                <label>Staff Name:</label>
+                <input type="text" name="staff_name">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="staff_institution">
+                <label>Type of Support:</label>
+                <input type="text" name="staff_support_type">
+                <label>Gender:</label>
+                <input type="text" name="staff_gender">
+                <label>Designation:</label>
+                <input type="text" name="staff_designation">
+                <label>Percentage Time Allocated:</label>
+                <input type="number" name="staff_percentage_time">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="staff_quarter">
+                <label>Remarks:</label>
+                <textarea name="staff_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Staff Data</button>
+            </div>
+        </div>
+
+        <!-- Section 3: Prizes and Recognition -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('prizes-recognition-section')">Prizes and Recognition <button type="button" class="collapse-btn">+</button></h2>
+            <div id="prizes-recognition-section" class="collapse-content">
+                <label>Name of Awardee:</label>
+                <input type="text" name="awardee_name">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="awardee_institution">
+                <label>Title of Award/Recognition:</label>
+                <input type="text" name="award_title">
+                <label>Type of Recognition/Award:</label>
+                <input type="text" name="award_type">
+                <label>Gender:</label>
+                <input type="text" name="awardee_gender">
+                <label>Level of Awardee:</label>
+                <input type="text" name="awardee_level">
+                <label>Date of Award:</label>
+                <input type="date" name="award_date">
+                <label>Monetary Value (USD):</label>
+                <input type="number" name="award_value">
+                <label>Remarks:</label>
+                <textarea name="award_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Prize/Award Data</button>
+            </div>
+        </div>
+
+        <!-- Section 4: Promotions and Appointments -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('promotions-appointments-section')">Promotions and Appointments <button type="button" class="collapse-btn">+</button></h2>
+            <div id="promotions-appointments-section" class="collapse-content">
+                <label>Name of Awardee:</label>
+                <input type="text" name="promotion_name">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="promotion_institution">
+                <label>Title of Promotion/Appointment:</label>
+                <input type="text" name="promotion_title">
+                <label>Type of Recognition/Award:</label>
+                <input type="text" name="promotion_type">
+                <label>Gender:</label>
+                <input type="text" name="promotion_gender">
+                <label>Level of Awardee:</label>
+                <input type="text" name="promotion_level">
+                <label>Date of Award:</label>
+                <input type="date" name="promotion_date">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="promotion_quarter">
+                <label>Remarks:</label>
+                <textarea name="promotion_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Promotion Data</button>
+            </div>
+        </div>
+
+        <!-- Section 5: Innovations -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('innovations-section')">Innovations Resulting from DELTAS Program <button type="button" class="collapse-btn">+</button></h2>
+            <div id="innovations-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="innovation_institution">
+                <label>Innovation Name:</label>
+                <input type="text" name="innovation_name">
+                <label>Description:</label>
+                <textarea name="innovation_description"></textarea>
+                <label>Status:</label>
+                <input type="text" name="innovation_status">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="innovation_quarter">
+                <label>Remarks:</label>
+                <textarea name="innovation_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Innovation Data</button>
+            </div>
+        </div>
+
+        <!-- Section 6: Publications -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('publications-section')">Publications Produced with DELTAS Support <button type="button" class="collapse-btn">+</button></h2>
+            <div id="publications-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="publication_institution">
+                <label>Publication Type:</label>
+                <input type="text" name="publication_type">
+                <label>Title:</label>
+                <input type="text" name="publication_title">
+                <label>Gender of First Author:</label>
+                <input type="text" name="publication_first_author_gender">
+                <label>DOI:</label>
+                <input type="text" name="publication_doi">
+                <label>Publication Date:</label>
+                <input type="date" name="publication_date">
+                <label>Grant ID Number:</label>
+                <input type="text" name="publication_grant_id">
+                <label>Open Access Status:</label>
+                <input type="text" name="publication_open_access">
+                <label>DELTAS Africa Acknowledgment:</label>
+                <input type="text" name="publication_acknowledgment">
+                <label>First/Last Author Funding Source:</label>
+                <input type="text" name="publication_funding_source">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="publication_quarter">
+                <label>Additional Remarks:</label>
+                <textarea name="publication_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Publication Data</button>
+            </div>
+        </div>
+
+        <!-- Section 7: Intellectual Properties -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('intellectual-properties-section')">Intellectual Properties Developed with DELTAS Support <button type="button" class="collapse-btn">+</button></h2>
+            <div id="intellectual-properties-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="ip_institution">
+                <label>IP Type:</label>
+                <input type="text" name="ip_type">
+                <label>Description:</label>
+                <textarea name="ip_description"></textarea>
+                <label>Website Link or Document Link:</label>
+                <input type="url" name="ip_link">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="ip_quarter">
+                <label>Remarks:</label>
+                <textarea name="ip_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit IP Data</button>
+            </div>
+        </div>
+
+        <!-- Section 8: Grantee-led Non-Financial Research Collaborations -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('collaborations-non-financial-section')">Grantee-led Non-Financial Research Collaborations <button type="button" class="collapse-btn">+</button></h2>
+            <div id="collaborations-non-financial-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="collaboration_institution">
+                <label>Collaborator Name:</label>
+                <input type="text" name="collaboration_name">
+                <label>Collaborator Type:</label>
+                <input type="text" name="collaboration_type">
+                <label>Collaboration Type:</label>
+                <input type="text" name="collaboration_collab_type">
+                <label>Purpose:</label>
+                <input type="text" name="collaboration_purpose">
+                <label>Establishment Date:</label>
+                <input type="date" name="collaboration_date">
+                <label>Collaboration Lead (Within Institution):</label>
+                <input type="text" name="collaboration_lead">
+                <label>Monetary Equivalent (USD):</label>
+                <input type="number" name="collaboration_value">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="collaboration_quarter">
+                <label>Additional Remarks:</label>
+                <textarea name="collaboration_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Non-Financial Collaboration Data</button>
+            </div>
+        </div>
+
+        <!-- Section 9: Grantee-led Financial Collaborations -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('collaborations-financial-section')">Grantee-led Financial Collaborations <button type="button" class="collapse-btn">+</button></h2>
+            <div id="collaborations-financial-section" class="collapse-content">
+                <label>Collaborator Type:</label>
+                <input type="text" name="financial_collaboration_type">
+                <label>Collaboration Type:</label>
+                <input type="text" name="financial_collaboration_collab_type">
+                <label>Purpose:</label>
+                <input type="text" name="financial_collaboration_purpose">
+                <label>Additional Funding Leveraged (USD):</label>
+                <input type="number" name="financial_collaboration_funding">
+                <label>Collaboration Lead (Within Institution):</label>
+                <input type="text" name="financial_collaboration_lead">
+                <label>Establishment Date:</label>
+                <input type="date" name="financial_collaboration_date">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="financial_collaboration_quarter">
+                <label>Remarks:</label>
+                <textarea name="financial_collaboration_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Financial Collaboration Data</button>
+            </div>
+        </div>
+
+        <!-- Section 10: Policies -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('policies-section')">Policies Influenced by DELTAS Program <button type="button" class="collapse-btn">+</button></h2>
+            <div id="policies-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="policy_institution">
+                <label>Policy Name:</label>
+                <input type="text" name="policy_name">
+                <label>Resulting Policy Changes:</label>
+                <textarea name="policy_changes"></textarea>
+                <label>Country of Implementation:</label>
+                <input type="text" name="policy_country">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="policy_quarter">
+                <label>Remarks:</label>
+                <textarea name="policy_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Policy Data</button>
+            </div>
+        </div>
+
+
+	 <!-- Section 11: DELTAS Supported Authors -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('supported-authors-section')">Number of DELTAS Supported Authors <button type="button" class="collapse-btn">+</button></h2>
+            <div id="supported-authors-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="author_institution">
+                <label>Name of Author:</label>
+                <input type="text" name="author_name">
+                <label>Gender:</label>
+                <input type="text" name="author_gender">
+                <label>Category of Author:</label>
+                <input type="text" name="author_category">
+                <label>Type of Author:</label>
+                <input type="text" name="author_type">
+                <label>Type of Accessibility:</label>
+                <input type="text" name="author_accessibility">
+                <label>Publication DOI:</label>
+                <input type="text" name="author_doi">
+                <label>Publication Date:</label>
+                <input type="date" name="author_pub_date">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="author_quarter">
+                <label>Remarks:</label>
+                <textarea name="author_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Supported Authors Data</button>
+            </div>
+        </div>
+
+        <!-- Section 12: ISAB Meetings -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('isab-meetings-section')">Independent Scientific Advisory Board (ISAB) Meetings <button type="button" class="collapse-btn">+</button></h2>
+            <div id="isab-meetings-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="isab_institution">
+                <label>Meeting Start Date:</label>
+                <input type="date" name="isab_start_date">
+                <label>Meeting End Date:</label>
+                <input type="date" name="isab_end_date">
+                <label>Meeting Venue:</label>
+                <input type="text" name="isab_venue">
+                <label>Changes to ISAB Membership:</label>
+                <textarea name="isab_changes"></textarea>
+                <label>Contribution of ISAB:</label>
+                <textarea name="isab_contribution"></textarea>
+                <button type="submit" class="submit-btn">Submit ISAB Meetings Data</button>
+            </div>
+        </div>
+
+        <!-- Section 13: Trainings Provided -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('trainings-section')">Trainings Provided to DELTAS Africa 2 Grantees <button type="button" class="collapse-btn">+</button></h2>
+            <div id="trainings-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="training_institution">
+                <label>Title of Training:</label>
+                <input type="text" name="training_title">
+                <label>Training Institute:</label>
+                <input type="text" name="training_institute">
+                <label>Training/Fellowship Level:</label>
+                <input type="text" name="training_level">
+                <label>Training Type:</label>
+                <input type="text" name="training_type">
+                <label>Number of Fellows Targeted - Male:</label>
+                <input type="number" name="fellows_targeted_male">
+                <label>Number of Fellows Targeted - Female:</label>
+                <input type="number" name="fellows_targeted_female">
+                <label>Number of Fellows Enrolled - Male:</label>
+                <input type="number" name="fellows_enrolled_male">
+                <label>Number of Fellows Enrolled - Female:</label>
+                <input type="number" name="fellows_enrolled_female">
+                <label>Number of Fellows Trained - Male:</label>
+                <input type="number" name="fellows_trained_male">
+                <label>Number of Fellows Trained - Female:</label>
+                <input type="number" name="fellows_trained_female">
+                <label>Completed Fellowships - Male:</label>
+                <input type="number" name="completed_male">
+                <label>Completed Fellowships - Female:</label>
+                <input type="number" name="completed_female">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="training_quarter">
+                <label>Comments:</label>
+                <textarea name="training_comments"></textarea>
+                <button type="submit" class="submit-btn">Submit Training Data</button>
+            </div>
+        </div>
+
+        <!-- Section 14: Mentors Recruited -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('mentors-section')">Number of Mentors Recruited <button type="button" class="collapse-btn">+</button></h2>
+            <div id="mentors-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="mentor_institution">
+                <label>Name of Mentor:</label>
+                <input type="text" name="mentor_name">
+                <label>Gender:</label>
+                <input type="text" name="mentor_gender">
+                <label>Mentor Type:</label>
+                <input type="text" name="mentor_type">
+                <label>Level of Training/Fellowship:</label>
+                <input type="text" name="mentor_level">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="mentor_quarter">
+                <label>Remarks:</label>
+                <textarea name="mentor_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Mentor Data</button>
+            </div>
+        </div>
+
+        <!-- Section 15: Fellows Discontinued -->
+        <div class="form-section">
+            <h2 onclick="toggleCollapse('fellows-discontinued-section')">Number of Fellows Discontinued <button type="button" class="collapse-btn">+</button></h2>
+            <div id="fellows-discontinued-section" class="collapse-content">
+                <label>DELTAS Institution:</label>
+                <input type="text" name="discontinued_institution">
+                <label>Name of Fellow:</label>
+                <input type="text" name="discontinued_fellow_name">
+                <label>Gender:</label>
+                <input type="text" name="discontinued_fellow_gender">
+                <label>Level of Training/Fellowship:</label>
+                <input type="text" name="discontinued_fellow_level">
+                <label>Reason for Discontinuation:</label>
+                <textarea name="discontinuation_reason"></textarea>
+                <label>Discontinuation Date:</label>
+                <input type="date" name="discontinuation_date">
+                <label>Reporting Quarter:</label>
+                <input type="text" name="discontinuation_quarter">
+                <label>Remarks:</label>
+                <textarea name="discontinuation_remarks"></textarea>
+                <button type="submit" class="submit-btn">Submit Discontinuation Data</button>
+            </div>
+        </div>
+
+
+	<!-- Section 15: Number of Fellows Recruited Outside the African Continent -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('recruited-outside-africa-section')">Number of Fellows Recruited Outside the African Continent <button type="button" class="collapse-btn">+</button></h2>
+    <div id="recruited-outside-africa-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="recruited_institution">
+        <label>Name of Fellow:</label>
+        <input type="text" name="recruited_fellow_name">
+        <label>Gender:</label>
+        <input type="text" name="recruited_fellow_gender">
+        <label>Age of Fellow at Recruitment:</label>
+        <input type="number" name="recruited_fellow_age">
+        <label>Level of Training/Fellowship:</label>
+        <input type="text" name="recruited_fellow_level">
+        <label>Nationality:</label>
+        <input type="text" name="recruited_fellow_nationality">
+        <label>Country Recruited From:</label>
+        <input type="text" name="recruited_country">
+        <label>Recruitment Date:</label>
+        <input type="date" name="recruited_date">
+        <label>Expected Date of Completion:</label>
+        <input type="date" name="completion_date">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="recruited_quarter">
+        <label>Remarks:</label>
+        <textarea name="recruited_remarks"></textarea>
+        <button type="submit" class="submit-btn">Submit Recruitment Data</button>
+    </div>
+</div>
+
+<!-- Section 16: Number of Conference Presentations Made by DELTAS Africa II Fellows -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('conference-presentations-section')">Number of Conference Presentations Made by DELTAS Africa II Fellows <button type="button" class="collapse-btn">+</button></h2>
+    <div id="conference-presentations-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="conference_institution">
+        <label>Name of Fellow:</label>
+        <input type="text" name="conference_fellow_name">
+        <label>Gender:</label>
+        <input type="text" name="conference_fellow_gender">
+        <label>Level of Training/Fellowship:</label>
+        <input type="text" name="conference_fellow_level">
+        <label>Name of Conference:</label>
+        <input type="text" name="conference_name">
+        <label>Title of Presentation:</label>
+        <input type="text" name="presentation_title">
+        <label>Conference Sponsorship Type (To the Fellow):</label>
+        <input type="text" name="conference_sponsorship_type">
+        <label>Conference Sponsor(s) (For the Fellow participating):</label>
+        <input type="text" name="conference_sponsor">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="conference_quarter">
+        <label>Remarks:</label>
+        <textarea name="conference_remarks"></textarea>
+        <button type="submit" class="submit-btn">Submit Conference Data</button>
+    </div>
+</div>
+
+<!-- Section 17: Number of DELTAS Institutions Assessed and Certified for Good Financial Grant Practices -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('gfgp-assessment-section')">Number of DELTAS Institutions Assessed and Certified for Good Financial Grant Practices (GFGP) <button type="button" class="collapse-btn">+</button></h2>
+    <div id="gfgp-assessment-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="gfgp_institution">
+        <label>Type of Institution:</label>
+        <input type="text" name="gfgp_institution_type">
+        <label>Assessed:</label>
+        <input type="text" name="gfgp_assessed">
+        <label>Assessment Date:</label>
+        <input type="date" name="gfgp_assessment_date">
+        <label>Certified:</label>
+        <input type="text" name="gfgp_certified">
+        <label>Certification:</label>
+        <input type="text" name="gfgp_certification">
+        <label>Certification Date:</label>
+        <input type="date" name="gfgp_certification_date">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="gfgp_quarter">
+        <label>Additional Details (Not Assessed/Certified):</label>
+        <textarea name="gfgp_additional_details"></textarea>
+        <button type="submit" class="submit-btn">Submit GFGP Data</button>
+    </div>
+</div>
+
+<!-- Section 18: Number of Times Safeguarding and Whistleblowing Policies Have Been Provoked -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('safeguarding-whistleblowing-section')">Number of Times Safeguarding and Whistleblowing Policies Have Been Provoked <button type="button" class="collapse-btn">+</button></h2>
+    <div id="safeguarding-whistleblowing-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="safeguarding_institution">
+        <label>Type of Institution:</label>
+        <input type="text" name="safeguarding_institution_type">
+        <label>Name of Policy Invoked:</label>
+        <input type="text" name="policy_invoked">
+        <label>Incident Date:</label>
+        <input type="date" name="incident_date">
+        <label>Status of the Issue:</label>
+        <input type="text" name="issue_status">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="safeguarding_quarter">
+        <label>Comment on Circumstances:</label>
+        <textarea name="safeguarding_remarks"></textarea>
+        <label>Next Course of Action:</label>
+        <textarea name="safeguarding_action"></textarea>
+        <button type="submit" class="submit-btn">Submit Safeguarding/Whistleblowing Data</button>
+    </div>
+</div>
+
+<!-- Section 19: Number of Institutions with Research Policies, Processes, and Procedures -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('research-policies-section')">Number of Institutions with Research Policies, Processes, and Procedures <button type="button" class="collapse-btn">+</button></h2>
+    <div id="research-policies-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="research_institution">
+        <label>Type of Institution:</label>
+        <input type="text" name="research_institution_type">
+        <label>Research Policies, Processes, and Procedures Operationalized:</label>
+        <input type="text" name="research_policies_operationalized">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="research_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="research_remarks"></textarea>
+        <button type="submit" class="submit-btn">Submit Research Policies Data</button>
+    </div>
+</div>
+
+<!-- Section 20: Number of Institutions with a Functional Research Support Office -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('research-support-office-section')">Number of Institutions with a Functional Research Support Office <button type="button" class="collapse-btn">+</button></h2>
+    <div id="research-support-office-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="research_support_institution">
+        <label>Type of Institution:</label>
+        <input type="text" name="research_support_institution_type">
+        <label>Functional Research Support Office:</label>
+        <input type="text" name="research_support_functional">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="research_support_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="research_support_remarks"></textarea>
+        <button type="submit" class="submit-btn">Submit Research Support Office Data</button>
+    </div>
+</div>
+
+
+
+<!-- Section 1: Number of Institutions with Structures that Address Intellectual Property and Technology Transfer -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('ip-structure-section')">Number of Institutions with Structures that Address Intellectual Property and Technology Transfer <button type="button" class="collapse-btn">+</button></h2>
+    <div id="ip-structure-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="ip_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="ip_institution_type">
+        <label>Type of Structure:</label>
+        <input type="text" name="ip_structure_type">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="ip_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="ip_additional_remarks" placeholder="Are the structures sufficient in addressing IP management, technology transfer, and knowledge dissemination?"></textarea>
+        <button type="submit" class="submit-btn">Submit IP Structure Data</button>
+    </div>
+</div>
+
+<!-- Section 2: Number of Institutions with Policies and Procedures for Community and Public Engagement -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('pe-policy-section')">Number of Institutions with Policies and Procedures for Community and Public Engagement <button type="button" class="collapse-btn">+</button></h2>
+    <div id="pe-policy-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="pe_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="pe_institution_type">
+        <label>Policies and Procedures for PE Operationalized:</label>
+        <input type="text" name="pe_policy_operationalized">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="pe_reporting_quarter">
+        <label>Remarks:</label>
+        <textarea name="pe_remarks" placeholder="Any comments on the operationalization of community and public engagement policies?"></textarea>
+        <button type="submit" class="submit-btn">Submit PE Policy Data</button>
+    </div>
+</div>
+
+<!-- Section 3: Number of Institutions with Staff Dedicated for Community and Public Engagement -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('pe-staff-section')">Number of Institutions with Staff Dedicated for Community and Public Engagement <button type="button" class="collapse-btn">+</button></h2>
+    <div id="pe-staff-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="pe_staff_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="pe_staff_institution_type">
+        <label>Number of PE Staff:</label>
+        <input type="number" name="pe_staff_count">
+        <label>Average Proportion (%) of Time Allocated to DELTAS Africa CPE Activities:</label>
+        <input type="number" name="pe_time_allocation">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="pe_staff_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="pe_staff_remarks" placeholder="Are the PE staff sufficient and what improvements can be made for efficient delivery?"></textarea>
+        <button type="submit" class="submit-btn">Submit PE Staff Data</button>
+    </div>
+</div>
+
+<!-- Section 4: Number of Institutions with a Budget Allocation for Community and Public Engagement -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('cpe-budget-section')">Number of Institutions with a Budget Allocation for Community and Public Engagement from the DELTAS Africa II Main Award <button type="button" class="collapse-btn">+</button></h2>
+    <div id="cpe-budget-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="cpe_budget_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="cpe_budget_institution_type">
+        <label>CPE Budget (for the reporting period):</label>
+        <input type="number" name="cpe_budget">
+        <label>Number of Fellows Supported to Conduct CPE:</label>
+        <input type="number" name="fellows_supported">
+        <label>Expenditure on Other CPE Activities:</label>
+        <input type="number" name="expenditure_other_cpe">
+        <label>Total CPE Expenditure:</label>
+        <input type="number" name="total_cpe_expenditure">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="cpe_budget_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="cpe_budget_remarks" placeholder="Is the CPE budget sufficient and what is the suggested way forward?"></textarea>
+        <button type="submit" class="submit-btn">Submit CPE Budget Data</button>
+    </div>
+</div>
+
+
+<!-- Section 5: Number of Community and Public Engagement Activities Conducted/Attended -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('community-engagement-section')">Number of Community and Public Engagement Activities Conducted/Attended <button type="button" class="collapse-btn">+</button></h2>
+    <div id="community-engagement-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="ce_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="ce_institution_type">
+        <label>Nature of Community Engagement Activity Conducted:</label>
+        <input type="text" name="ce_activity_nature">
+        <label>Description of Audience Engaged:</label>
+        <textarea name="ce_audience_description"></textarea>
+        <label>Did Feedback from the Audience Inform the Research?</label>
+        <select name="ce_feedback_inform_research">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <label>Did the Community Provide Support to Researchers?</label>
+        <select name="ce_community_support">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <label>Nature of Support Provided by Community:</label>
+        <textarea name="ce_support_nature"></textarea>
+        <label>Reporting Quarter:</label>
+        <input type="text" name="ce_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="ce_additional_remarks" placeholder="Discuss researcher and community attitudes, issues raised, mutual learning, and suggestions for improvement."></textarea>
+        <button type="submit" class="submit-btn">Submit Community Engagement Data</button>
+    </div>
+</div>
+
+<!-- Section 6: Number of Policy Events and Activities Conducted/Attended -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('policy-events-section')">Number of Policy Events and Activities Conducted/Attended <button type="button" class="collapse-btn">+</button></h2>
+    <div id="policy-events-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="policy_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="policy_institution_type">
+        <label>Description of the Activity:</label>
+        <textarea name="policy_activity_description"></textarea>
+        <label>Target Audience:</label>
+        <textarea name="policy_target_audience"></textarea>
+        <label>Did the Event Influence Policy at National/Continental Level?</label>
+        <select name="policy_influence">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <label>How Did the Event Influence Policy?</label>
+        <textarea name="policy_influence_description"></textarea>
+        <label>Reporting Quarter:</label>
+        <input type="text" name="policy_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="policy_additional_remarks"></textarea>
+        <button type="submit" class="submit-btn">Submit Policy Event Data</button>
+    </div>
+</div>
+
+<!-- Section 7: Number of Institutions with a Science Communication Plan -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('science-communication-section')">Number of Institutions with a Science Communication Plan <button type="button" class="collapse-btn">+</button></h2>
+    <div id="science-communication-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="sc_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="sc_institution_type">
+        <label>Science Communication Plan Operationalized:</label>
+        <select name="sc_plan_operationalized">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <label>Reporting Quarter:</label>
+        <input type="text" name="sc_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="sc_additional_remarks" placeholder="Provide reasons and action steps if the plan is not operational."></textarea>
+        <button type="submit" class="submit-btn">Submit Science Communication Plan Data</button>
+    </div>
+</div>
+
+<!-- Section 8: Number of Media Communication and Research Dissemination Activities Held -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('media-communication-section')">Number of Media Communication and Research Dissemination Activities Held <button type="button" class="collapse-btn">+</button></h2>
+    <div id="media-communication-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="media_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="media_institution_type">
+        <label>Type of Activity:</label>
+        <input type="text" name="media_activity_type">
+        <label>Description of the Activity:</label>
+        <textarea name="media_activity_description"></textarea>
+        <label>Total Number of Media Impressions/Audience Reached:</label>
+        <input type="number" name="media_audience_reached">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="media_reporting_quarter">
+        <label>Additional Remarks:</label>
+        <textarea name="media_additional_remarks" placeholder="Note any outstanding impact of the activity."></textarea>
+        <button type="submit" class="submit-btn">Submit Media Communication Data</button>
+    </div>
+</div>
+
+
+<!-- Section 9: Methods of Reaching Non-Scientific Audiences -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('non-scientific-audiences-section')">Methods of Reaching Non-Scientific Audiences <button type="button" class="collapse-btn">+</button></h2>
+    <div id="non-scientific-audiences-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="nsa_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="nsa_institution_type">
+        <label>Total Media Coverage:</label>
+        <input type="number" name="nsa_media_coverage">
+        <label>Total Number of Impact Stories Produced:</label>
+        <input type="number" name="nsa_impact_stories">
+        <label>Total Number of Infographics and Programme Brochures Developed:</label>
+        <input type="number" name="nsa_infographics_brochures">
+        <label>Total Number of Policy Briefs Developed:</label>
+        <input type="number" name="nsa_policy_briefs">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="nsa_reporting_quarter">
+        <label>Remarks:</label>
+        <textarea name="nsa_remarks" placeholder="Provide a breakdown of the impact stories (blogs and case studies) produced."></textarea>
+        <button type="submit" class="submit-btn">Submit Non-Scientific Audience Data</button>
+    </div>
+</div>
+
+<!-- Section 10: Level of Science Communication Support and Empowerment Provided to Fellows -->
+<div class="form-section">
+    <h2 onclick="toggleCollapse('sci-comm-support-section')">Level of Science Communication Support and Empowerment Provided to Fellows <button type="button" class="collapse-btn">+</button></h2>
+    <div id="sci-comm-support-section" class="collapse-content">
+        <label>DELTAS Institution:</label>
+        <input type="text" name="scs_institution_name">
+        <label>Type of Institution:</label>
+        <input type="text" name="scs_institution_type">
+        <label>Total Number of SciComm Trainings:</label>
+        <input type="number" name="scs_training_total">
+        <label>Total Number of Toolkits Provided:</label>
+        <input type="number" name="scs_toolkits_total">
+        <label>Reporting Quarter:</label>
+        <input type="text" name="scs_reporting_quarter">
+        <label>Remarks:</label>
+        <textarea name="scs_remarks" placeholder="Provide details on specific science communication trainings, support, and toolkits provided to the fellows."></textarea>
+        <button type="submit" class="submit-btn">Submit SciComm Support Data</button>
+    </div>
+</div>
+
+
+    </form>
+</div>
+
+<script>
+    function toggleCollapse(sectionId) {
+        const content = document.getElementById(sectionId);
+        const button = content.previousElementSibling.querySelector('.collapse-btn');
+        
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+            button.innerText = "-";
+        } else {
+            content.style.display = "none";
+            button.innerText = "+";
+        }
+    }
+</script>
+
+</body>
+</html>
